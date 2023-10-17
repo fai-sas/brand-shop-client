@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -9,14 +9,14 @@ const Navbar = () => {
         aria-label='Global'
       >
         <div className='flex items-center justify-between gap-4'>
-          <Link
+          <NavLink
             to='/'
             className='flex-none text-xl font-semibold dark:text-white'
             href='#'
             aria-label='Brand'
           >
             <img src='https://i.ibb.co/DCmXkQL/ms10logo2.png' alt='' />
-          </Link>
+          </NavLink>
           <div className='sm:hidden'>
             <button
               type='button'
@@ -33,7 +33,7 @@ const Navbar = () => {
                 viewBox='0 0 16 16'
               >
                 <path
-                  fill-rule='evenodd'
+                  // fill-rule='evenodd'
                   d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z'
                 />
               </svg>
@@ -54,30 +54,30 @@ const Navbar = () => {
           className='hidden overflow-hidden text-xl transition-all duration-300 hs-collapse basis-full grow sm:block '
         >
           <div className='flex flex-col mt-5 gap-y-4 gap-x-0 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7'>
-            <Link
+            <NavLink
               to='/'
               className='font-medium text-blue-600 sm:py-6 dark:text-blue-500'
               href='#'
               aria-current='page'
             >
               Home
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to='addproduct'
               className='font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500'
               href='#'
             >
               Add Product
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to='mycart'
               className='font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500'
               href='#'
             >
               My Cart
-            </Link>
+            </NavLink>
 
-            <Link
+            <NavLink
               to='/login'
               className='flex items-center font-medium text-gray-500 gap-x-2 hover:text-blue-600 sm:border-l sm:border-gray-300 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500'
               href='#'
@@ -93,7 +93,7 @@ const Navbar = () => {
                 <path d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z' />
               </svg>
               Log in
-            </Link>
+            </NavLink>
           </div>
         </div>
       </nav>
