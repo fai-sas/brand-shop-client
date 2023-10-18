@@ -1,4 +1,10 @@
+import Brands from '../Components/Brands'
+
 const HomePage = () => {
-  return <div>HomePage</div>
+  return (
+    <div>
+      <Brands />
+    </div>
+  )
 }
 export default HomePage

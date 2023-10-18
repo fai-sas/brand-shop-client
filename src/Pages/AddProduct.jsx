@@ -16,6 +16,7 @@ const AddProduct = () => {
     const description = form.description.value
     const rating = form.rating.value
     const image = form.image.value
+    const brandImage = form.brandImage.value
 
     const newProduct = {
       name,
@@ -25,12 +26,13 @@ const AddProduct = () => {
       description,
       rating,
       image,
+      brandImage,
     }
     console.log(newProduct)
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/brands',
+        'https://brand-shop-server-sable.vercel.app/brands',
         newProduct,
         {
           headers: {
@@ -158,18 +160,38 @@ const AddProduct = () => {
         {/* end of   row 3 } */}
 
         {/* row 4 */}
-        <label
-          htmlFor='image'
-          className='block mb-2 text-2xl font-medium dark:text-white'
-        >
-          Image
-        </label>
-        <input
-          type='text'
-          name='image'
-          className='block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
-          placeholder='Image'
-        ></input>
+        <article className='py-4 md:flex md:gap-4'>
+          <div className='w-1/2'>
+            <label
+              htmlFor='image'
+              className='block mb-2 text-2xl font-medium dark:text-white'
+            >
+              Image
+            </label>
+            <input
+              type='text'
+              name='brandImage'
+              className='block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
+              placeholder='Brand Logo'
+            ></input>
+          </div>
+          <div className='w-1/2'>
+            <label
+              htmlFor='brandImage'
+              className='block mb-2 text-2xl font-medium dark:text-white'
+            >
+              Brand Logo
+            </label>
+            <input
+              type='text'
+              name='brandImage'
+              className='block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
+              placeholder='Rating'
+            ></input>
+          </div>
+        </article>
+        {/* end of   row 4 } */}
+
         <button
           type='submit'
           className='inline-flex items-center justify-center w-full gap-2 px-4 py-4 my-8 text-2xl font-semibold text-white transition-all bg-blue-500 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800'
