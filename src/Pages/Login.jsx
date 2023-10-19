@@ -1,6 +1,47 @@
-import { Link } from 'react-router-dom'
+/* eslint-disable no-unused-vars */
+
+import { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { AuthContext } from '../providers/AuthProvider'
 
 const Login = () => {
+  const { signInUserWithEmail, signInWithGoogle } = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    const email = e.target.email.value
+    const password = e.target.password.value
+    console.log(email, password)
+
+    signInUserWithEmail(email, password)
+      .then((result) => {
+        toast.success(`Welcome ${result.user.displayName}`)
+
+        console.log(result.user)
+        e.target.reset()
+        navigate('/')
+      })
+      .catch((error) => {
+        toast.error('Invalid Login Details')
+        console.error(error)
+      })
+  }
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        toast.success('Successfully Logged In')
+        console.log(result.user)
+        navigate('/')
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+
   return (
     <body className='flex items-center h-full py-16 bg-gray-100 dark:bg-slate-900'>
       <main className='w-full max-w-md p-6 mx-auto'>
@@ -23,6 +64,7 @@ const Login = () => {
 
             <div className='mt-5'>
               <button
+                onClick={handleGoogleSignIn}
                 type='button'
                 className='inline-flex items-center justify-center w-full gap-2 px-4 py-3 text-sm font-medium text-gray-700 align-middle transition-all bg-white border rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800'
               >
@@ -57,7 +99,7 @@ const Login = () => {
                 Or
               </div>
 
-              <form>
+              <form onSubmit={handleLogin}>
                 <div className='grid gap-y-4'>
                   <div>
                     <label className='block mb-2 text-sm dark:text-white'>
@@ -150,6 +192,7 @@ const Login = () => {
           </div>
         </div>
       </main>
+      <ToastContainer />
     </body>
   )
 }
