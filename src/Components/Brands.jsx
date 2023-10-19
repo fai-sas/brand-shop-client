@@ -10,14 +10,16 @@ const Brands = () => {
   })
 
   return (
-    <>
-      <h1 className='py-8 text-4xl font-bold'>Our Popular Products</h1>
-      <div className='md:grid md:grid-cols-2 md:gap-8'>
+    <section className='container py-8 mx-auto'>
+      <h1 className='py-8 text-4xl font-bold text-center'>
+        Our Popular Brands
+      </h1>
+      <div className='grid gap-8 p-8 md:grid-cols-3'>
         {uniqueBrands.map((brand) => (
           <BrandsCard key={brand._id} brand={brand} />
         ))}
       </div>
-    </>
+    </section>
   )
 }
 

@@ -18,9 +18,9 @@ const BrandPage = () => {
   }, [brandName, data])
 
   return (
-    <div>
+    <div className='container p-8 mx-auto'>
       <Advertisement />
-      <section className='gap-4 md:grid md:grid-cols-3'>
+      <section className='grid gap-4 md:grid-cols-3'>
         {singleBrand.map((product) => {
           console.log(product)
           return <ProductByBrands key={product._id} product={product} />

@@ -1,8 +1,10 @@
+import Banner from '../Components/Banner'
 import Brands from '../Components/Brands'
 
 const HomePage = () => {
   return (
-    <div>
+    <div className=''>
+      <Banner />
       <Brands />
     </div>
   )

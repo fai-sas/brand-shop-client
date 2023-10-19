@@ -15,7 +15,7 @@ const ProductDetailsPage = () => {
 
   return (
     <>
-      <div className='bg-white border rounded-xl shadow-sm sm:flex dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]'>
+      <div className=' container mx-auto p-8 bg-white border rounded-xl shadow-sm sm:flex dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]'>
         <div className='flex-shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-l-xl sm:max-w-[15rem] md:rounded-tr-none md:max-w-xs'>
           <img
             src={singleProduct.image}
