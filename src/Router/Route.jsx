@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createBrowserRouter } from 'react-router-dom'
 import MainLayout from '../layout/MainLayout'
 import HomePage from '../Pages/HomePage'
@@ -8,6 +9,7 @@ import Register from '../Pages/Register'
 import BrandPage from '../Pages/BrandPage'
 import ProductDetailsPage from '../Pages/ProductDetailsPage'
 import UpdateProduct from '../Pages/UpdateProduct'
+import PrivateRoute from './PrivateRoute'
 
 const Route = createBrowserRouter([
   {
@@ -26,16 +28,29 @@ const Route = createBrowserRouter([
       },
       {
         path: '/products/:id',
-        element: <ProductDetailsPage />,
+        element: (
+          <PrivateRoute>
+            <ProductDetailsPage />{' '}
+          </PrivateRoute>
+        ),
         loader: () => fetch('http://localhost:5000/brands'),
       },
       {
         path: '/addproduct',
-        element: <AddProduct />,
+        element: (
+          <PrivateRoute>
+            {' '}
+            <AddProduct />{' '}
+          </PrivateRoute>
+        ),
       },
       {
         path: '/updateproduct/:id',
-        element: <UpdateProduct />,
+        element: (
+          <PrivateRoute>
+            <UpdateProduct />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/brands/${params.id}`),
       },

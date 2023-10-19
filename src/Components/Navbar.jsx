@@ -89,6 +89,20 @@ const Navbar = () => {
               My Cart
             </NavLink>
 
+            {user && (
+              <>
+                <Link className='font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500'>
+                  {user?.displayName}
+                </Link>
+                <Link className='font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500'>
+                  <img
+                    className='object-cover w-10 rounded-full'
+                    src={user?.photoURL}
+                  />
+                </Link>
+              </>
+            )}
+
             {user ? (
               <button
                 onClick={handleLogOut}

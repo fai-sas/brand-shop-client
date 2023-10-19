@@ -38,7 +38,7 @@ const Register = () => {
         updateProfile(result.user, {
           displayName: name,
           photoURL:
-            'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            'https://user-images.githubusercontent.com/11250/39013954-f5091c3a-43e6-11e8-9cac-37cf8e8c8e4e.jpg',
         })
           .then(() => console.log('profile updated'))
           .catch()
