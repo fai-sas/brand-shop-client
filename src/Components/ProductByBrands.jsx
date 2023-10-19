@@ -36,7 +36,7 @@ const ProductByBrands = ({ product }) => {
           </button>
         </Link>
 
-        <Link>
+        <Link to={`/updateproduct/${_id}`}>
           <button
             type='button'
             className='inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-gray-800 transition-all border-2 border-gray-900 rounded-md hover:text-white hover:bg-gray-800 hover:border-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 dark:hover:bg-gray-900 dark:border-gray-900 dark:hover:border-gray-900 dark:text-white dark:focus:ring-gray-900 dark:focus:ring-offset-gray-800'
