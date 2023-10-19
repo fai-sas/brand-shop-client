@@ -13,8 +13,8 @@ const Login = () => {
               <p className='mt-2 text-sm text-gray-600 dark:text-gray-400'>
                 Don&apos;t have an account yet?
                 <Link
+                  to='/register'
                   className='ml-2 font-medium text-blue-600 decoration-2 hover:underline'
-                  href='../examples/html/signup.html'
                 >
                   Sign up here
                 </Link>

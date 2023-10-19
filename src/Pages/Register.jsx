@@ -1,4 +1,54 @@
+/* eslint-disable no-unused-vars */
+import { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { updateProfile } from 'firebase/auth'
+import { AuthContext } from '../providers/AuthProvider'
+
 const Register = () => {
+  const { createUserWithEmail } = useContext(AuthContext)
+  const navigate = useNavigate()
+
+  const handleRegister = (e) => {
+    e.preventDefault()
+    const name = e.target.name.value
+    const email = e.target.email.value
+    const password = e.target.password.value
+    console.log(name, email, password)
+
+    if (password.length < 6) {
+      toast.error('Password should be at least 6 characters or longer')
+      return
+    } else if (!/(?=.*[A-Z])(?=.*[@#$%^&+=!])/.test(password)) {
+      toast.error(
+        'Password should have at least one upper case and one special character.'
+      )
+      return
+    }
+
+    createUserWithEmail(email, password)
+      .then((result) => {
+        toast.success('Successfully Registered')
+        e.target.reset()
+        navigate('/login')
+        console.log(result.user)
+
+        // update profile
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL:
+            'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        })
+          .then(() => console.log('profile updated'))
+          .catch()
+      })
+
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+
   return (
     <div className='container relative p-8 mx-auto my-8 overflow-hidden'>
       <div className='max-w-screen-md px-4 py-12 mx-auto sm:px-6 md:max-w-screen-xl md:py-20 lg:py-32 md:px-8'>
@@ -7,10 +57,10 @@ const Register = () => {
             <span className='text-blue-600 dark:text-blue-500'>Sign Up</span>
           </h1>
 
-          <form>
+          <form onSubmit={handleRegister}>
             <div className='mb-4'>
               <label
-                for='hs-hero-name-2'
+                htmlFor='hs-hero-name-2'
                 className='block text-sm font-medium dark:text-white'
               >
                 <span className='sr-only'>Full name</span>
@@ -26,7 +76,7 @@ const Register = () => {
 
             <div className='mb-4'>
               <label
-                for='hs-hero-email-2'
+                htmlFor='hs-hero-email-2'
                 className='block text-sm font-medium dark:text-white'
               >
                 <span className='sr-only'>Email address</span>
@@ -42,7 +92,7 @@ const Register = () => {
 
             <div className='mb-4'>
               <label
-                for='hs-hero-password-2'
+                htmlFor='hs-hero-password-2'
                 className='block text-sm font-medium dark:text-white'
               >
                 <span className='sr-only'>Password</span>
@@ -69,6 +119,7 @@ const Register = () => {
       </div>
 
       <div className=" rounded-lg hidden md:block md:absolute md:top-0 md:left-1/2 md:right-0 h-full bg-[url('https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80')] bg-no-repeat bg-center bg-cover"></div>
+      <ToastContainer />
     </div>
   )
 }
