@@ -32,7 +32,7 @@ const AddProduct = () => {
 
     try {
       const response = await axios.post(
-        'https://brand-shop-server-sable.vercel.app/brands',
+        'http://localhost:5000/brands',
         newProduct,
         {
           headers: {
@@ -170,7 +170,7 @@ const AddProduct = () => {
             </label>
             <input
               type='text'
-              name='brandImage'
+              name='image'
               className='block w-full px-4 py-3 text-sm border-gray-200 rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400'
               placeholder='Brand Logo'
             ></input>
