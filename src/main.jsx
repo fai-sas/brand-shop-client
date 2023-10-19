@@ -4,9 +4,12 @@ import './index.css'
 import('preline')
 import { RouterProvider } from 'react-router-dom'
 import Route from './Router/Route.jsx'
+import AuthProvider from './providers/AuthProvider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={Route}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={Route}></RouterProvider>
+    </AuthProvider>
   </React.StrictMode>
 )
