@@ -34,6 +34,24 @@ const Register = () => {
         navigate('/login')
         console.log(result.user)
 
+        const createdAt = result.user?.metadata?.creationTime
+        const user = { email, createdAt: createdAt }
+
+        fetch(
+          'https://brand-shop-server-6hfij00m5-coding-freaks-projects.vercel.app/user',
+          {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(user),
+          }
+        ).then((data) => {
+          if (data.insertedId) {
+            console.log('user added to the database')
+          }
+        })
+
         // update profile
         updateProfile(result.user, {
           displayName: name,

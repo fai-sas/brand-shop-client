@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "brandName": "Apple",
+    "img1": "https://campaignsoftheworld.com/wp-content/uploads/2017/06/Apple-iPhone.jpg",
+    "img2": "https://techcrunch.com/wp-content/uploads/2019/03/Screen-Shot-2019-03-14-at-12.12.42-PM.png?w=1390&crop=1",
+    "img3": "https://www.cnet.com/a/img/resize/9d94f6c7cdc58d7b128ab292a89bb172cf4deeaf/hub/2018/04/24/5db2959b-022c-415c-9ca4-cb54c90e6a1e/appleads.jpg?auto=webp&width=1920"
+  },
+  {
+    "id": "2",
+    "brandName": "Google",
+    "img1": "https://www.rprna.com/wp-content/uploads/2023/09/Google-Pixel-8-ad.jpg",
+    "img2": "https://freight.cargo.site/t/original/i/74d4dbefaaefe21d8edd4a82d2fbf9e973f2fdc37557c73626247c3a271b46dc/GOO_SELECTS_FALL_PIXEL_FINALb7.jpg",
+    "img3": "https://2.bp.blogspot.com/-RpPV7tf41C4/WdY0YSD_2GI/AAAAAAAAASg/RJCubF4UKkA0h4cLHfwKlp2Uja4ooq9swCLcBGAs/s1600/Google%2BPixel.jpg"
+  },
+  {
+    "id": "3",
+    "brandName": "Sony",
+    "img1": "https://i.ytimg.com/vi/P_SXYjOwnVI/maxresdefault.jpg",
+    "img2": "https://androidcommunity.com/wp-content/uploads/2021/10/Sony-Xperia-PRO-I-Ad.jpeg",
+    "img3": "https://cdn1.clickthecity.com/wp-content/uploads/2020/08/17164621/SC-LazMall-Banner-1-1.jpg"
+  },
+  {
+    "id": "4",
+    "brandName": "Samsung",
+    "img1": "https://img.global.news.samsung.com/in/wp-content/uploads/2018/01/Corporate-Carnival_Mobile-1024x768-1.jpg",
+    "img2": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/cb43c1100594297.5f0d43c71c6e2.jpg",
+    "img3": "https://static.toiimg.com/photo/msid-90198609/90198609.jpg"
+  },
+  {
+    "id": "5",
+    "brandName": "Intel",
+    "img1": "https://www.hpcwire.com/wp-content/uploads/2023/09/Intel-Chip-Roadmap.png",
+    "img2": "https://assets-global.website-files.com/622ef9de9152c97467eac748/6241d4f7c65116ffceb54042_Webflow%20blog%20cover%20image.png",
+    "img3": "https://www.trustedreviews.com/wp-content/uploads/sites/54/2021/03/Intel-Rocker-Lake-2-scaled-e1615908184341.jpeg"
+  },
+  {
+    "id": "6",
+    "brandName": "Corsair",
+    "img1": "https://cdn11.bigcommerce.com/s-8e755/images/stencil/1280x1280/products/227347/330409/4000D_AF_BLACK_02__85184.1692154501.1280.1280__70057.1692156384.jpg?c=2",
+    "img2": "https://www.corsair.com/images/corsair-social-default-image.jpg",
+    "img3": "https://img.freepik.com/premium-psd/gaming-headphone-product-ads-banner_252779-754.jpg?w=2000"
+  }
+]
