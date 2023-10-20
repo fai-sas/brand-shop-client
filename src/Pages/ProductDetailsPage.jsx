@@ -1,8 +1,13 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useContext, useEffect, useState } from 'react'
 import { Link, useLoaderData, useParams } from 'react-router-dom'
+import { AuthContext } from '../providers/AuthProvider'
+import Swal from 'sweetalert2'
 
 const ProductDetailsPage = () => {
+  const { user } = useContext(AuthContext)
+
   const [singleProduct, setSingleProduct] = useState([])
 
   const data = useLoaderData()
@@ -12,6 +17,48 @@ const ProductDetailsPage = () => {
     const findProduct = data?.find((product) => product._id === id)
     setSingleProduct(findProduct)
   }, [id, data])
+
+  const handleAddToCart = async () => {
+    const userId = user.uid
+    const name = singleProduct.name
+    const image = singleProduct.image
+    const type = singleProduct.type
+    const brandName = singleProduct.brandName
+    const description = singleProduct.description
+
+    const addedProduct = {
+      userId,
+      name,
+      image,
+      type,
+      brandName,
+      description,
+    }
+
+    try {
+      const response = await axios.post(
+        'http://localhost:5000/addedproducts',
+        addedProduct,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+      console.log(response.data)
+      console.log(addedProduct)
+      if (response.data.insertedId) {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Product Added Successfully',
+          icon: 'success',
+          confirmButtonText: 'Okay',
+        })
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   return (
     <>
@@ -34,6 +81,7 @@ const ProductDetailsPage = () => {
             <div className='mt-5 sm:mt-auto'>
               <Link to='#'>
                 <button
+                  onClick={handleAddToCart}
                   type='button'
                   className='inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white transition-all bg-blue-500 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800'
                 >
