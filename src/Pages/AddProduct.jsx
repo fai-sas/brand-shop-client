@@ -57,7 +57,7 @@ const AddProduct = () => {
 
   return (
     <section className='container py-8 mx-auto '>
-      <h1 className='text-4xl text-center'>Add Product</h1>
+      <h1 className='text-4xl text-center dark:text-white'>Add Product</h1>
 
       <form className='p-8 mx-auto w-[90%]' onSubmit={handleAddProduct}>
         {/* row 1 */}

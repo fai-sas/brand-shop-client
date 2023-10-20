@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className='bg-gray-300'>
+    <footer className='bg-gray-300 dark:bg-gray-800'>
       <div className='max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 lg:pt-20 mx-auto'>
         <div className='grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5'>
           <div className='col-span-full lg:col-span-1'>
@@ -83,7 +83,7 @@ const Footer = () => {
             <h4 className='font-semibold text-gray-800'>Stay up to date</h4>
 
             <form>
-              <div className='flex flex-col items-center gap-2 p-2 mt-4 bg-white rounded-md sm:flex-row sm:gap-3'>
+              <div className='flex flex-col items-center gap-2 p-2 mt-4 bg-white rounded-md dark:bg-gray-800 sm:flex-row sm:gap-3'>
                 <div className='w-full'>
                   <label htmlFor='hero-input' className='sr-only'>
                     Search
@@ -92,7 +92,7 @@ const Footer = () => {
                     type='text'
                     id='hero-input'
                     name='hero-input'
-                    className='block w-full px-4 py-3 border-transparent rounded-md shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500'
+                    className='block w-full px-4 py-3 border-transparent rounded-md shadow-sm dark:bg-gray-800 focus:z-10 focus:border-blue-500 focus:ring-blue-500'
                     placeholder='Enter your email'
                   />
                 </div>
@@ -112,9 +112,9 @@ const Footer = () => {
             <p className='text-sm text-gray-400'>© 2023 All rights reserved.</p>
           </div>
 
-          <div>
+          <div className=''>
             <a
-              className='inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-900 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition'
+              className='inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-900 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition dark:text-white'
               href='#'
             >
               <svg
@@ -129,7 +129,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              className='inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-900 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition'
+              className='inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-900 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2  dark:text-white focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition'
               href='#'
             >
               <svg
@@ -144,7 +144,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              className='inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-900 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition'
+              className='inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-900 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2  dark:text-white focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition'
               href='#'
             >
               <svg
@@ -159,7 +159,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              className='inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-900 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition'
+              className='inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center  dark:text-white text-gray-900 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition'
               href='#'
             >
               <svg
@@ -174,7 +174,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              className='inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center text-gray-900 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition'
+              className='inline-flex justify-center items-center gap-x-3.5 w-10 h-10 text-center dark:text-white text-gray-900 hover:bg-white/[.1] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-900 transition'
               href='#'
             >
               <svg

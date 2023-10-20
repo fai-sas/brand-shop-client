@@ -2,6 +2,8 @@
 import { useContext, useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../providers/AuthProvider'
+import Swal from 'sweetalert2'
+import axios from 'axios'
 
 const MyCart = () => {
   const [productsByUserID, setProductsByUserID] = useState([])
@@ -16,9 +18,41 @@ const MyCart = () => {
     setProductsByUserID(uniqueProducts)
   }, [loadedProducts, userId])
 
-  console.log(productsByUserID)
+  const id = productsByUserID._id
 
-  console.log(productsByUserID, length)
+  const handleDelete = async (id) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Remove from Cart!',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const response = await axios.delete(
+            `http://localhost:5000/addedproducts/${id}`
+          )
+
+          if (response.data.deletedCount > 0) {
+            Swal.fire(
+              'Removed!',
+              'Product Has Been Removed from Cart.',
+              'success'
+            )
+            const remaining = productsByUserID.filter(
+              (product) => product._id !== id
+            )
+            setProductsByUserID(remaining)
+          }
+        } catch (error) {
+          console.error(error)
+        }
+      }
+    })
+  }
+
   if (productsByUserID.length === 0) {
     return (
       <>
@@ -51,7 +85,7 @@ const MyCart = () => {
                 height='73.2425'
                 rx='36.6212'
                 transform='rotate(40.8596 270.524 221.872)'
-                class='fill-gray-400 dark:fill-white'
+                className='fill-gray-400 dark:fill-white'
                 fill='currentColor'
               />
               <ellipse
@@ -59,12 +93,12 @@ const MyCart = () => {
                 cy='404.372'
                 rx='121.5'
                 ry='23.5'
-                class='fill-gray-400 dark:fill-white'
+                className='fill-gray-400 dark:fill-white'
                 fill='currentColor'
               />
               <path
                 d='M111.608 188.872C120.959 177.043 141.18 171.616 156.608 188.872'
-                class='stroke-gray-400 dark:stroke-white'
+                className='stroke-gray-400 dark:stroke-white'
                 stroke='currentColor'
                 stroke-width='7'
                 stroke-linecap='round'
@@ -74,7 +108,7 @@ const MyCart = () => {
                 cy='116.872'
                 rx='9'
                 ry='12'
-                class='fill-gray-400 dark:fill-white'
+                className='fill-gray-400 dark:fill-white'
                 fill='currentColor'
               />
               <ellipse
@@ -82,16 +116,16 @@ const MyCart = () => {
                 cy='117.872'
                 rx='9'
                 ry='12'
-                class='fill-gray-400 dark:fill-white'
+                className='fill-gray-400 dark:fill-white'
                 fill='currentColor'
               />
               <path
                 d='M194.339 147.588C189.547 148.866 189.114 142.999 189.728 138.038C189.918 136.501 191.738 135.958 192.749 137.131C196.12 141.047 199.165 146.301 194.339 147.588Z'
-                class='fill-gray-400 dark:fill-white'
+                className='fill-gray-400 dark:fill-white'
                 fill='currentColor'
               />
             </svg>
-            <p class='mt-5 text-2xl font-bold text-gray-800 dark:text-gray-500'>
+            <p className='mt-5 text-2xl font-bold text-gray-800 dark:text-white'>
               No Products Added
             </p>
           </div>
@@ -102,13 +136,14 @@ const MyCart = () => {
     return (
       <>
         <section className='container p-8 mx-auto'>
-          <h1 className='p-4 text-4xl font-bold text-center'>
+          <h1 className='p-4 text-4xl font-bold text-center dark:text-white'>
             Your Added Products
           </h1>
 
           <article className='grid grid-cols-3 gap-4'>
             {productsByUserID.map((product) => {
-              const { _id, name, image, type, brandName, description } = product
+              const { _id, name, image, price, type, brandName, description } =
+                product
               return (
                 <>
                   <div
@@ -116,7 +151,7 @@ const MyCart = () => {
                     className='flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]  '
                   >
                     <img
-                      className='w-full h-auto rounded-t-xl'
+                      className='w-full  rounded-t-xl object-cover h-[20rem]'
                       src={image}
                       alt={name}
                     />
@@ -124,15 +159,16 @@ const MyCart = () => {
                       <h3 className='text-lg font-bold text-gray-800 dark:text-white'>
                         {name}
                       </h3>
-                      <p className='mt-1 text-gray-800 dark:text-gray-400'>
-                        {description}
+                      <p className='mt-1 font-bold text-gray-800 dark:text-gray-400'>
+                        $ {price}
                       </p>
-                      <a
-                        className='inline-flex items-center justify-center gap-2 px-4 py-3 mt-3 text-sm font-semibold text-white transition-all bg-blue-500 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800'
-                        href='#'
+                      <button
+                        onClick={() => handleDelete(_id)}
+                        type='button'
+                        className='inline-flex items-center justify-center w-full gap-2 px-4 py-3 my-4 font-semibold text-center text-red-500 transition-all border-2 border-red-200 rounded-md text-md hover:text-white hover:bg-red-500 hover:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 focus:ring-offset-2 dark:focus:ring-offset-gray-800 '
                       >
-                        Go somewhere
-                      </a>
+                        Remove from Cart
+                      </button>
                     </div>
                   </div>
                 </>

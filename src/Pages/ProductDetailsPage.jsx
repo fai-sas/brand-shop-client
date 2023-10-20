@@ -21,6 +21,7 @@ const ProductDetailsPage = () => {
   const handleAddToCart = async () => {
     const userId = user.uid
     const name = singleProduct.name
+    const price = singleProduct.price
     const image = singleProduct.image
     const type = singleProduct.type
     const brandName = singleProduct.brandName
@@ -29,6 +30,7 @@ const ProductDetailsPage = () => {
     const addedProduct = {
       userId,
       name,
+      price,
       image,
       type,
       brandName,

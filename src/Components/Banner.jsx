@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <>
-      <div className='container px-8 py-8 mx-auto sm:px-6'>
+      <div className='container px-8 py-8 mx-auto sm:px-6 '>
         {/*  */}
         <div className='grid gap-4 md:grid-cols-2 md:gap-8 xl:gap-20 md:items-center'>
           <div>
@@ -35,7 +35,7 @@ const Banner = () => {
                 </svg>
               </a>
               <a
-                className='inline-flex justify-center items-center gap-x-3.5 text-sm lg:text-base text-center border hover:border-gray-300 shadow-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:border-gray-800 dark:hover:border-gray-600 dark:shadow-slate-700/[.7] dark:text-white dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800'
+                className='inline-flex justify-center items-center gap-x-3.5 text-sm lg:text-base text-center border hover:border-gray-300 shadow-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:border-gray-800  dark:bg-blue-500 dark:hover:border-gray-600 dark:shadow-slate-700/[.7] dark:text-white dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800'
                 href='#'
               >
                 Contact Sales Team

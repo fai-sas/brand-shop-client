@@ -55,7 +55,7 @@ const UpdateProduct = () => {
 
   return (
     <section className='container py-8 mx-auto '>
-      <h1 className='text-4xl text-center'>Update Product</h1>
+      <h1 className='text-4xl text-center dark:text-white'>Update Product</h1>
 
       <form className='p-8 mx-auto w-[90%]' onSubmit={handleUpdateProduct}>
         {/* row 1 */}
@@ -130,7 +130,6 @@ const UpdateProduct = () => {
 
         {/* row 3 */}
         <article className='py-4 md:flex md:gap-4'>
-          <div className='w-1/2'></div>
           <div className='w-1/2'>
             <label
               htmlFor='rating'
@@ -146,11 +145,6 @@ const UpdateProduct = () => {
               placeholder='Rating'
             ></input>
           </div>
-        </article>
-        {/* end of   row 3 } */}
-
-        {/* row 4 */}
-        <article className='py-4 md:flex md:gap-4'>
           <div className='w-1/2'>
             <label
               htmlFor='image'
@@ -166,6 +160,11 @@ const UpdateProduct = () => {
               placeholder='Brand Logo'
             ></input>
           </div>
+        </article>
+        {/* end of   row 3 } */}
+
+        {/* row 4 */}
+        <article className='py-4 md:flex md:gap-4'>
           <div className='w-1/2'></div>
         </article>
         {/* end of   row 4 } */}
