@@ -21,7 +21,9 @@ const ProductByBrands = ({ product }) => {
           />
         </div>
         <div className='p-4 md:p-5 bg-slate-100 dark:bg-slate-800 space-y-4'>
-          <h3 className='text-3xl font-bold text-gray-800 '>{name}</h3>
+          <h3 className='text-3xl font-bold dark:text-gray-200 text-gray-800 '>
+            {name}
+          </h3>
           <p className='mt-1 font-bold text-2xl text-gray-800 dark:text-gray-400'>
             $ Price: {price}
           </p>
@@ -50,7 +52,7 @@ const ProductByBrands = ({ product }) => {
             <Link to={`/updateproduct/${_id}`}>
               <button
                 type='button'
-                className='inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-gray-800 transition-all border-2 border-gray-900 rounded-md hover:text-white hover:bg-gray-800 hover:border-gray-800 focus:outline-none focus:ring-2  dark:bg-gray-500 focus:ring-gray-800 focus:ring-offset-2 dark:hover:bg-gray-900 dark:border-gray-900 dark:hover:border-gray-900  dark:focus:ring-gray-900 dark:focus:ring-offset-gray-800'
+                className='inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-gray-800  transition-all border-2 border-gray-900 rounded-md hover:text-white hover:bg-gray-800 hover:border-gray-800 focus:outline-none focus:ring-2  dark:bg-gray-500 focus:ring-gray-800 focus:ring-offset-2 dark:hover:bg-gray-900 dark:border-gray-900 dark:hover:border-gray-900  dark:focus:ring-gray-900 dark:focus:ring-offset-gray-800'
               >
                 Update
               </button>

@@ -1,7 +1,9 @@
 const Features = () => {
   return (
     <div className='container p-10  mx-auto '>
-      <h1 className='py-8 text-4xl font-bold text-center'>Our Features</h1>
+      <h1 className='py-8 text-4xl dark:text-gray-200 font-bold text-center'>
+        Our Features
+      </h1>
       <div className='grid items-center md:py-12 gap-12 sm:grid-cols-2 lg:grid-cols-4'>
         <div className='text-center'>
           <div className='flex items-center justify-center w-12 h-12 mx-auto border border-gray-200 rounded-full bg-gray-50 dark:bg-gray-800 dark:border-gray-700'>
