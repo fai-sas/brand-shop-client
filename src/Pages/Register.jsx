@@ -7,7 +7,7 @@ import { updateProfile } from 'firebase/auth'
 import { AuthContext } from '../providers/AuthProvider'
 
 const Register = () => {
-  const { createUserWithEmail } = useContext(AuthContext)
+  const { createUserWithEmail, logOut } = useContext(AuthContext)
   const navigate = useNavigate()
 
   const handleRegister = (e) => {
@@ -29,6 +29,7 @@ const Register = () => {
 
     createUserWithEmail(email, password)
       .then((result) => {
+        logOut()
         toast.success('Successfully Registered')
         e.target.reset()
         navigate('/login')
