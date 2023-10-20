@@ -9,8 +9,12 @@ const Banner = () => {
               Purchase Your <span className='text-blue-600'>Dream</span> Here
             </h1>
             <p className='mt-3 text-lg text-gray-800 dark:text-gray-400'>
-              Hand-picked professionals and expertly crafted components,
-              designed for any kind of entrepreneur.
+              Innovation Meets Convenience! Discover a world of cutting-edge
+              electronics and gadgets, curated to elevate your lifestyle.
+              Explore the latest in tech, from smartphones to smart home
+              devices, all in one place. Experience the future today with our
+              handpicked selection of top-quality electronics. Shop now and stay
+              ahead of the curve
             </p>
 
             <div className='grid w-full gap-3 mt-7 sm:inline-flex'>

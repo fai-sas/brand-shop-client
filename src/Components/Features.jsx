@@ -1,7 +1,8 @@
 const Features = () => {
   return (
-    <div className='container px-4 py-10 mx-auto sm:px-6 lg:px-8 lg:py-14'>
-      <div className='grid items-center gap-12 sm:grid-cols-2 lg:grid-cols-4'>
+    <div className='container p-10  mx-auto '>
+      <h1 className='py-8 text-4xl font-bold text-center'>Our Features</h1>
+      <div className='grid items-center md:py-12 gap-12 sm:grid-cols-2 lg:grid-cols-4'>
         <div className='text-center'>
           <div className='flex items-center justify-center w-12 h-12 mx-auto border border-gray-200 rounded-full bg-gray-50 dark:bg-gray-800 dark:border-gray-700'>
             <svg
@@ -17,7 +18,7 @@ const Features = () => {
             </svg>
           </div>
           <div className='mt-3'>
-            <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>
+            <h3 className=' md:text-3xl text-lg font-semibold text-gray-800 dark:text-white'>
               Shop from App
             </h3>
             <p className='mt-1 text-gray-600 dark:text-gray-400'>
@@ -42,7 +43,7 @@ const Features = () => {
             </svg>
           </div>
           <div className='mt-3'>
-            <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>
+            <h3 className='text-lg md:text-3xl font-semibold text-gray-800 dark:text-white'>
               Sale Offer
             </h3>
             <p className='mt-1 text-gray-600 dark:text-gray-400'>
@@ -66,7 +67,7 @@ const Features = () => {
             </svg>
           </div>
           <div className='mt-3'>
-            <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>
+            <h3 className='text-lg md:text-3xl font-semibold text-gray-800 dark:text-white'>
               Track you order
             </h3>
             <p className='mt-1 text-gray-600 dark:text-gray-400'>
@@ -90,7 +91,7 @@ const Features = () => {
             </svg>
           </div>
           <div className='mt-3'>
-            <h3 className='text-lg font-semibold text-gray-800 dark:text-white'>
+            <h3 className='text-lg md:text-3xl font-semibold text-gray-800 dark:text-white'>
               24/7 Support
             </h3>
             <p className='mt-1 text-gray-600 dark:text-gray-400'>

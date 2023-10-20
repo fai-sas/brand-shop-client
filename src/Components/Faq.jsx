@@ -23,7 +23,7 @@ const Faq = () => {
                 className='inline-flex items-center justify-between w-full pb-3 font-semibold text-left text-gray-800 transition hs-accordion-toggle group gap-x-3 md:text-lg hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400'
                 aria-controls='hs-basic-with-title-and-arrow-stretched-collapse-one'
               >
-                Can I cancel at anytime?
+                How can I track my order status?
                 <svg
                   className='block w-3 h-3 text-gray-600 hs-accordion-active:hidden group-hover:text-gray-500 dark:text-gray-400'
                   width='16'
@@ -61,9 +61,10 @@ const Faq = () => {
                 aria-labelledby='hs-basic-with-title-and-arrow-stretched-heading-one'
               >
                 <p className='text-gray-600 dark:text-gray-400'>
-                  Yes, you can cancel anytime no questions are asked while you
-                  cancel but we would highly appreciate if you will give us some
-                  feedback.
+                  We provide a tracking number for every order. You can use this
+                  number to check your order&apos; status. Simply visit the
+                  Track Order section on our website and input your tracking
+                  number to get real-time updates on your shipment
                 </p>
               </div>
             </div>
@@ -76,7 +77,7 @@ const Faq = () => {
                 className='inline-flex items-center justify-between w-full pb-3 font-semibold text-left text-gray-800 transition hs-accordion-toggle group gap-x-3 md:text-lg hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400'
                 aria-controls='hs-basic-with-title-and-arrow-stretched-collapse-two'
               >
-                My team has credits. How do we use them?
+                What payment methods do you accept?
                 <svg
                   className='block w-3 h-3 text-gray-600 hs-accordion-active:hidden group-hover:text-gray-500 dark:text-gray-400'
                   width='16'
@@ -114,8 +115,10 @@ const Faq = () => {
                 aria-labelledby='hs-basic-with-title-and-arrow-stretched-heading-two'
               >
                 <p className='text-gray-600 dark:text-gray-400'>
-                  Once your team signs up for a subscription plan. This is where
-                  we sit down, grab a cup of coffee and dial in the details.
+                  We accept a variety of payment methods, including major credit
+                  and debit cards such as Visa, MasterCard, and American
+                  Express. Additionally, we offer secure payment gateways for
+                  digital wallets and online payment services.
                 </p>
               </div>
             </div>
@@ -128,7 +131,7 @@ const Faq = () => {
                 className='inline-flex items-center justify-between w-full pb-3 font-semibold text-left text-gray-800 transition hs-accordion-toggle group gap-x-3 md:text-lg hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400'
                 aria-controls='hs-basic-with-title-and-arrow-stretched-collapse-three'
               >
-                How does Brand Shop&apos;s pricing work?
+                Is my personal information safe when I shop here?
                 <svg
                   className='block w-3 h-3 text-gray-600 hs-accordion-active:hidden group-hover:text-gray-500 dark:text-gray-400'
                   width='16'
@@ -166,8 +169,11 @@ const Faq = () => {
                 aria-labelledby='hs-basic-with-title-and-arrow-stretched-heading-three'
               >
                 <p className='text-gray-600 dark:text-gray-400'>
-                  Our subscriptions are tiered. Understanding the task at hand
-                  and ironing out the wrinkles is key.
+                  Yes, your privacy and security are our top priorities. We use
+                  industry-standard encryption and security measures to protect
+                  your personal information. Your data is always handled with
+                  the utmost care. You can read more about our security
+                  practices in our Privacy Policy.
                 </p>
               </div>
             </div>
@@ -180,7 +186,7 @@ const Faq = () => {
                 className='inline-flex items-center justify-between w-full pb-3 font-semibold text-left text-gray-800 transition hs-accordion-toggle group gap-x-3 md:text-lg hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400'
                 aria-controls='hs-basic-with-title-and-arrow-stretched-collapse-four'
               >
-                How secure is Brand Shop?
+                Do you offer product warranties or guarantees?
                 <svg
                   className='block w-3 h-3 text-gray-600 hs-accordion-active:hidden group-hover:text-gray-500 dark:text-gray-400'
                   width='16'
@@ -218,9 +224,11 @@ const Faq = () => {
                 aria-labelledby='hs-basic-with-title-and-arrow-stretched-heading-four'
               >
                 <p className='text-gray-600 dark:text-gray-400'>
-                  Protecting the data you trust to Brand Shop is our first
-                  priority. This part is really crucial in keeping the project
-                  in line to completion.
+                  Absolutely, we stand by the quality of our products. Many
+                  items come with manufacturer warranties. You can find details
+                  about warranties and guarantees on the product page. If you
+                  encounter any issues, please contact our customer support for
+                  assistance.
                 </p>
               </div>
             </div>
@@ -233,7 +241,7 @@ const Faq = () => {
                 className='inline-flex items-center justify-between w-full pb-3 font-semibold text-left text-gray-800 transition hs-accordion-toggle group gap-x-3 md:text-lg hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400'
                 aria-controls='hs-basic-with-title-and-arrow-stretched-collapse-five'
               >
-                How do I get access to a theme I purchased?
+                What is your return policy?
                 <svg
                   className='block w-3 h-3 text-gray-600 hs-accordion-active:hidden group-hover:text-gray-500 dark:text-gray-400'
                   width='16'
@@ -271,12 +279,10 @@ const Faq = () => {
                 aria-labelledby='hs-basic-with-title-and-arrow-stretched-heading-five'
               >
                 <p className='text-gray-600 dark:text-gray-400'>
-                  If you lose the link for a theme you purchased, don't panic!
-                  We've got you covered. You can login to your account, tap your
-                  avatar in the upper right corner, and tap Purchases. If you
-                  didn't create a login or can't remember the information, you
-                  can use our handy Redownload page, just remember to use the
-                  same email you originally made your purchases with.
+                  We want you to be satisfied with your purchase. If you're not
+                  completely happy, we offer a hassle-free return policy. You
+                  can initiate a return within 30 days of receiving your order.
+                  Please review our Return Policy for more details.
                 </p>
               </div>
             </div>
@@ -289,7 +295,7 @@ const Faq = () => {
                 className='inline-flex items-center justify-between w-full pb-3 font-semibold text-left text-gray-800 transition hs-accordion-toggle group gap-x-3 md:text-lg hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400'
                 aria-controls='hs-basic-with-title-and-arrow-stretched-collapse-six'
               >
-                Upgrade License Type
+                Do you offer customer support? How can I get in touch?
                 <svg
                   className='block w-3 h-3 text-gray-600 hs-accordion-active:hidden group-hover:text-gray-500 dark:text-gray-400'
                   width='16'
@@ -327,10 +333,11 @@ const Faq = () => {
                 aria-labelledby='hs-basic-with-title-and-arrow-stretched-heading-six'
               >
                 <p className='text-gray-600 dark:text-gray-400'>
-                  There may be times when you need to upgrade your license from
-                  the original type you purchased and we have a solution that
-                  ensures you can apply your original purchase cost to the new
-                  license purchase.
+                  Yes, we have a dedicated customer support team ready to assist
+                  you. You can reach us through email, live chat, or by calling
+                  our customer support hotline. We are here to answer your
+                  questions, help with issues, and ensure your shopping
+                  experience is enjoyable.
                 </p>
               </div>
             </div>
