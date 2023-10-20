@@ -10,7 +10,7 @@ const Advertisement = ({ brandName }) => {
   const [cards, setCards] = useState([])
 
   useEffect(() => {
-    fetch('/public/data.json')
+    fetch('/data.json')
       .then((response) => response.json())
       .then((data) => {
         const filteredData = data.filter((item) => item.brandName === brandName)
@@ -59,19 +59,18 @@ const Advertisement = ({ brandName }) => {
 
   return (
     <>
-      <div className='p-16'>
-        {/* <h1 className='text-4xl font-bold'>Brand Advertisement</h1> */}
+      <div className=' p-4 lg:p-16'>
         {cards.map((item) => {
           return (
-            <div key={item.index} ref={sliderRef} className='keen-slider'>
-              <div className='rounded-md keen-slider__slide number-slide1'>
-                <img src={item?.img1} className='rounded-md' alt='' />
+            <div key={item.index} ref={sliderRef} className='keen-slider p-0'>
+              <div className='rounded-md keen-slider__slide number-slide1 pb-0'>
+                <img src={item?.img1} className='' alt='' />
               </div>
-              <div className='rounded-md keen-slider__slide number-slide2'>
-                <img src={item?.img2} alt='' className='rounded-md' />
+              <div className='rounded-md keen-slider__slide number-slide2 pb-0'>
+                <img src={item?.img2} alt='' className='' />
               </div>
-              <div className='rounded-md keen-slider__slide number-slide3'>
-                <img src={item?.img3} className='rounded-md' alt='' />
+              <div className='rounded-md keen-slider__slide number-slide3 pb-0'>
+                <img src={item?.img3} className='' alt='' />
               </div>
             </div>
           )

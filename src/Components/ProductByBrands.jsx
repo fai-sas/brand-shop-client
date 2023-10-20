@@ -17,34 +17,45 @@ const ProductByBrands = ({ product }) => {
           <img
             src={image}
             alt={name}
-            className='absolute top-0 left-0 object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105 rounded-t-xl'
+            className='absolute top-0 h-[25rem] object-cover left-0  w-full transition-transform duration-500 ease-in-out group-hover:scale-105 rounded-t-xl'
           />
         </div>
-        <div className='p-4 md:p-5'>
-          <h3 className='text-lg font-bold text-gray-800 dark:text-white'>
-            {name}
-          </h3>
-          <p className='mt-1 text-gray-800 dark:text-gray-400'>{brandName}</p>
-          <p className='mt-1 text-gray-800 dark:text-gray-400'>{type}</p>
-          <p className='mt-1 text-gray-800 dark:text-gray-400'>{price}</p>
-          <p className='mt-1 text-gray-800 dark:text-gray-400'>{rating}</p>
-          <Link to={`/products/${_id}`}>
-            <button
-              type='button'
-              className='inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white transition-all bg-gray-800 border border-transparent rounded-md hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 dark:focus:ring-gray-900 dark:focus:ring-offset-gray-800'
-            >
-              Details
-            </button>
-          </Link>
+        <div className='p-4 md:p-5 bg-slate-100 dark:bg-slate-800 space-y-4'>
+          <h3 className='text-3xl font-bold text-gray-800 '>{name}</h3>
+          <p className='mt-1 font-bold text-2xl text-gray-800 dark:text-gray-400'>
+            $ Price: {price}
+          </p>
+          <div className='flex justify-start gap-10 text-2xl '>
+            <p className='mt-1 text-gray-800 dark:text-gray-400'>
+              Brand: {brandName}
+            </p>
+            <p className='mt-1  text-gray-800 dark:text-gray-400'>
+              Category: {type}
+            </p>
+          </div>
+          <p className='mt-1 text-2xl text-gray-800 dark:text-gray-400'>
+            Rating: {rating} &#9733;
+          </p>
 
-          <Link to={`/updateproduct/${_id}`}>
-            <button
-              type='button'
-              className='inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-gray-800 transition-all border-2 border-gray-900 rounded-md hover:text-white hover:bg-gray-800 hover:border-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 dark:hover:bg-gray-900 dark:border-gray-900 dark:hover:border-gray-900 dark:text-white dark:focus:ring-gray-900 dark:focus:ring-offset-gray-800'
-            >
-              Update
-            </button>
-          </Link>
+          <article className='flex gap-4 my-4'>
+            <Link to={`/products/${_id}`}>
+              <button
+                type='button'
+                className='inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white transition-all bg-gray-800 border border-transparent rounded-md hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 dark:focus:ring-gray-900 dark:focus:ring-offset-gray-800'
+              >
+                Details
+              </button>
+            </Link>
+
+            <Link to={`/updateproduct/${_id}`}>
+              <button
+                type='button'
+                className='inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-gray-800 transition-all border-2 border-gray-900 rounded-md hover:text-white hover:bg-gray-800 hover:border-gray-800 focus:outline-none focus:ring-2  dark:bg-gray-500 focus:ring-gray-800 focus:ring-offset-2 dark:hover:bg-gray-900 dark:border-gray-900 dark:hover:border-gray-900  dark:focus:ring-gray-900 dark:focus:ring-offset-gray-800'
+              >
+                Update
+              </button>
+            </Link>
+          </article>
         </div>
       </section>
     )

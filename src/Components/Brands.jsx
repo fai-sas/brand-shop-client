@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useLoaderData, useParams } from 'react-router-dom'
 import BrandsCard from './BrandsCard'
+import { useEffect, useState } from 'react'
 
 const Brands = () => {
   const loadedBrands = useLoaderData()
@@ -11,7 +12,7 @@ const Brands = () => {
 
   return (
     <section className='container py-8 mx-auto'>
-      <h1 className='py-8 text-4xl font-bold text-center'>
+      <h1 className='py-8 dark:text-gray-200 text-4xl font-bold text-center'>
         Our Popular Brands
       </h1>
       <div className='grid gap-8 p-8 md:grid-cols-3'>

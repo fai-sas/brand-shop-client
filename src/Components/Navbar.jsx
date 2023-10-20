@@ -6,26 +6,24 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(null)
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme')
+    return (
+      savedTheme ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light')
+    )
+  })
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark')
-    } else {
-      setTheme('light')
-    }
-  }, [])
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
+    document.documentElement.classList.remove('dark', 'light')
+    document.documentElement.classList.add(theme)
+    localStorage.setItem('theme', theme)
   }, [theme])
 
   const handleThemeSwitch = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'))
   }
 
   const { user, logOut } = useContext(AuthContext)
@@ -37,9 +35,9 @@ const Navbar = () => {
   }
 
   return (
-    <header className='z-50 flex flex-wrap w-full py-3 text-sm bg-white border-b border-gray-200 sm:justify-start sm:flex-nowrap sm:py-0 dark:bg-gray-800 dark:border-gray-700'>
+    <header className='z-50   flex flex-wrap container mx-auto py-3 text-sm bg-white border-b border-gray-200 sm:justify-start sm:flex-nowrap sm:py-0 dark:bg-gray-800 dark:border-gray-700'>
       <nav
-        className='relative w-full px-4 mx-auto max-w-7xl sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8'
+        className='relative w-full px-4 mx-auto  sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8'
         aria-label='Global'
       >
         <div className='flex items-center justify-between gap-4'>
@@ -90,7 +88,7 @@ const Navbar = () => {
           <div className='flex flex-col mt-5 gap-y-4 gap-x-0 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7'>
             <NavLink
               to='/'
-              className='font-medium text-blue-600 sm:py-6 dark:text-blue-500'
+              className='font-medium  sm:py-6 dark:text-blue-500'
               href='#'
               aria-current='page'
             >
