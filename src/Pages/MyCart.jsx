@@ -32,7 +32,7 @@ const MyCart = () => {
       if (result.isConfirmed) {
         try {
           const response = await axios.delete(
-            `http://localhost:5000/addedproducts/${id}`
+            `https://brand-shop-server-sable.vercel.app/addedproducts/${id}`
           )
 
           if (response.data.deletedCount > 0) {

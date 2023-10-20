@@ -31,7 +31,7 @@ const UpdateProduct = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/brands/${_id}`,
+        `https://brand-shop-server-sable.vercel.app/brands/${_id}`,
         updatedProduct,
         {
           headers: {

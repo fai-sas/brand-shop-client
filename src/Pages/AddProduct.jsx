@@ -32,7 +32,7 @@ const AddProduct = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/brands',
+        'https://brand-shop-server-sable.vercel.app/brands',
         newProduct,
         {
           headers: {

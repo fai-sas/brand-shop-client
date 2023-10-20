@@ -10,21 +10,25 @@ import BrandPage from '../Pages/BrandPage'
 import ProductDetailsPage from '../Pages/ProductDetailsPage'
 import UpdateProduct from '../Pages/UpdateProduct'
 import PrivateRoute from './PrivateRoute'
+import ErrorPage from '../Pages/ErrorPage'
 
 const Route = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
         element: <HomePage />,
-        loader: () => fetch('http://localhost:5000/brands'),
+        loader: () =>
+          fetch('https://brand-shop-server-sable.vercel.app/brands'),
       },
       {
         path: '/brands/:brandName',
         element: <BrandPage />,
-        loader: () => fetch('http://localhost:5000/brands'),
+        loader: () =>
+          fetch('https://brand-shop-server-sable.vercel.app/brands'),
       },
       {
         path: '/products/:id',
@@ -33,7 +37,8 @@ const Route = createBrowserRouter([
             <ProductDetailsPage />{' '}
           </PrivateRoute>
         ),
-        loader: () => fetch('http://localhost:5000/brands'),
+        loader: () =>
+          fetch('https://brand-shop-server-sable.vercel.app/brands'),
       },
       {
         path: '/addproduct',
@@ -52,7 +57,9 @@ const Route = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/brands/${params.id}`),
+          fetch(
+            `https://brand-shop-server-sable.vercel.app/brands/${params.id}`
+          ),
       },
       {
         path: '/mycart',
@@ -61,7 +68,8 @@ const Route = createBrowserRouter([
             <MyCart />
           </PrivateRoute>
         ),
-        loader: () => fetch('http://localhost:5000/addedproducts'),
+        loader: () =>
+          fetch('https://brand-shop-server-sable.vercel.app/addedproducts'),
       },
       {
         path: '/login',
