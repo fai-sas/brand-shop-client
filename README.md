@@ -1,6 +1,6 @@
 # Live Website Link
 
-https://brand-shop-63da8.firebaseapp.com
+https://brand-shop-cf.netlify.app
 
 # Website Features
 
