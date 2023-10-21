@@ -15,7 +15,6 @@ const Register = () => {
     const name = e.target.name.value
     const email = e.target.email.value
     const password = e.target.password.value
-    console.log(name, email, password)
 
     if (password.length < 6) {
       toast.error('Password should be at least 6 characters or longer')
@@ -36,18 +35,15 @@ const Register = () => {
         console.log(result.user)
 
         const createdAt = result.user?.metadata?.creationTime
-        const user = { email, createdAt: createdAt }
+        const user = { email, displayName: name, createdAt: createdAt }
 
-        fetch(
-          'https://brand-shop-server-6hfij00m5-coding-freaks-projects.vercel.app/user',
-          {
-            method: 'POST',
-            headers: {
-              'content-type': 'application/json',
-            },
-            body: JSON.stringify(user),
-          }
-        ).then((data) => {
+        fetch('https://brand-shop-server-sable.vercel.app/user', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(user),
+        }).then((data) => {
           if (data.insertedId) {
             console.log('user added to the database')
           }
@@ -75,6 +71,16 @@ const Register = () => {
           <h1 className='py-8 text-3xl font-bold text-center text-gray-800 md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight dark:text-gray-200'>
             <span className='text-blue-600 dark:text-blue-500'>Sign Up</span>
           </h1>
+
+          <p className='pb-8 text-sm text-center text-gray-600 dark:text-gray-400'>
+            Already have an account?
+            <Link
+              to='/login'
+              className='ml-2 font-medium text-blue-600 decoration-2 hover:underline'
+            >
+              Sign in here
+            </Link>
+          </p>
 
           <form onSubmit={handleRegister}>
             <div className='mb-4'>

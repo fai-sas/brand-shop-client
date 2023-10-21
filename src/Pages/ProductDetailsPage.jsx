@@ -77,6 +77,9 @@ const ProductDetailsPage = () => {
             <h3 className='text-lg font-bold text-gray-800 dark:text-white'>
               {singleProduct.name}
             </h3>
+            <h3 className='py-4 text-lg font-bold text-gray-800 dark:text-white'>
+              $ {singleProduct.price}
+            </h3>
             <p className='mt-1 text-gray-800 dark:text-gray-400'>
               {singleProduct.description}
             </p>

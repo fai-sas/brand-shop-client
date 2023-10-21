@@ -117,7 +117,7 @@ const Banner = () => {
                 </div>
 
                 <p className='mt-3 text-sm text-gray-800 dark:text-gray-200'>
-                  <span className='font-bold'>4.6</span> /5 - from 12k online
+                  <span className='font-bold'>5</span> /5 - from 12k online
                   reviews
                 </p>
               </div>
